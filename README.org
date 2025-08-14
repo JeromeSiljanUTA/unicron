@@ -2,3 +2,8 @@
 Lets me make changes to my org-agenda and have my iCalenar synced from an HTTP GET request.
 
 This is useful for when I make changes to my org-agenda from my phone and want to have my calendar updated as well.
+
+#+NAME: Running the server
+#+BEGIN_SRC bash
+gunicorn src.presentation.api:app -k uvicorn.workers.UvicornWorker --bind 0.0.0.0:8000 --workers 1
+#+END_SRC
