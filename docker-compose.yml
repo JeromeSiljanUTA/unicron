@@ -1,0 +1,14 @@
+services:
+  unicron:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: unicron_app
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - /home/jerome/agenda_files:/appdata/agenda
+      - /home/jerome/calendar:/appdata/calendar
+    restart: unless-stopped
